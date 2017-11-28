@@ -1,0 +1,16 @@
+SpringAOP
+
+
+
+1，在spring配置文件中加入aop的命名空间
+2，基于注解的方式
+ 1)，在配置文件中加入：
+ 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+ 2)，把横切关注点的代码抽象到切面的类中
+ 	a,切面首先是一个IOC中的bean，即加入@Component注解
+ 	b,切面还需要加入@Aspect注解
+ 3)，在类中声明各种通知：
+ 	a,声明一个方法
+ 	b,在方法前加入@Before等注解
+ 4)，可以在通知方法中声明一个类型为JoinPoint的参数，然后就能访问屈辱细节，如方法的名称和参数值等
+ 
